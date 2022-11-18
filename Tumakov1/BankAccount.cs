@@ -11,19 +11,18 @@ namespace Tumakov1
 {
     public class BankAccount
     {
-        private System.Collections.Queue Queue;
         private int ID { get; set; }
         private decimal Balance { get; set; }
-        public enum Acc_Type : byte
+        public enum AccType : byte
         {
             Saving,
             Current
         }
-        private Acc_Type Type { get; set; }
+        private AccType Type { get; set; }
 
 
         public BankAccount() { }
-        public BankAccount(int iD, decimal balance, Acc_Type type)
+        public BankAccount(int iD, decimal balance, AccType type)
         {
             ID = iD;
             Balance = balance;
@@ -36,9 +35,8 @@ namespace Tumakov1
         {
             Balance += money;
             Console.WriteLine($"Balance: {Balance}");
-            Queue.Enqueue(new Transactions(money));
 
-
+            Transactions tracs = new Transactions(Balance);
         }
         public void TakeMoney(decimal money)
         {
@@ -48,6 +46,7 @@ namespace Tumakov1
                 {
                     Balance -= money;
                     Console.WriteLine($"Balance: {Balance}");
+                    Transactions tracs = new Transactions(Balance);
                 }
                 else
                 {
@@ -58,27 +57,14 @@ namespace Tumakov1
             {
                 Console.WriteLine("Something is wrong!");
             }
-            Queue.Enqueue(new Transactions(money));
         }
-        public void Transition(BankAccount acc1, decimal perevod)
+
+        public static int GenerateID(List<BankAccount> list, BankAccount acc1)
         {
-            if (acc1.Balance > perevod)
-            {
-                acc1.Balance -= perevod;
-                Balance += perevod;
-            }
-            else
-            {
-                Console.WriteLine("Not enought money");
-            }
-        }
-        public void Dispose()
-        {
-            foreach (var i in Queue)
-            {
-                StreamWriter t = new StreamWriter("path.txt");
-                t.WriteLine(i.ToString());
-            }
+            BankAccount acc2 = new BankAccount();
+            int a = list.Count();
+            acc1 = list[a];
+            return acc2.ID = acc1.ID += 1;
         }
 
     }

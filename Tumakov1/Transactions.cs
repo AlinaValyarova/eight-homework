@@ -19,7 +19,7 @@ namespace Tumakov1
             this.summ = summ;
         }
 
-        public void PrintInfo()
+        public void Inf()
         {
             Console.WriteLine($" Date:{data} Sum:{summ}");
         }
