@@ -29,10 +29,6 @@ namespace Homework_8._2
             {
                 public int numOfTask;
                 public string name;
-                //class Initiator
-                //{
-                //    public string name;
-                //} - всегда тимлид, зачем?\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
                 class Taskmaker
                 {
@@ -49,14 +45,12 @@ namespace Homework_8._2
 
                 static void Main()
                 {
-                    /////////// objects///////////////
                     TeamLead you = new TeamLead();
                     Client cl = new Client();
                     Tasks NewTask = new Tasks();
                     Taskmaker TM = new Taskmaker();
                     Project NewProject = new Project();
                     Report NewReport = new Report();
-                    ///////////lists////////////////////
                     List<Project> ListOfProjects = new List<Project>();
                     List<Tasks> ListOfTasks = new List<Tasks>();
                     List<Tasks> Dump = new List<Tasks>();
@@ -64,21 +58,15 @@ namespace Homework_8._2
                     Console.WriteLine("Congradulations! Now you are a team lead!" + "\nPlease, enter your name!");
                     string name = Console.ReadLine();
                     you.name = name;
-                    
-
-                    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-
                     byte ch;
-
-                    //////////////////////////////////////////////////////////////////////////////////////////////////////////////
                     do
                     {
                         
                         Console.WriteLine("Please, enter what you need to do");
-                        Console.WriteLine("1 - Add a new project");//////////////// done ///////////////////////////////////////
-                        Console.WriteLine("2 - Add a new task");////////////////// done ////////////////////////////////////////
-                        Console.WriteLine("3 - Find your tasks");/////////////////// done //////////////////////////////////////
-                        Console.WriteLine("4 - Create a report");/////////////////////// 
+                        Console.WriteLine("1 - Add a new project");
+                        Console.WriteLine("2 - Add a new task");
+                        Console.WriteLine("3 - Find your tasks");
+                        Console.WriteLine("4 - Create a report");
                         Console.WriteLine("5 - redelegate declined projects");
                         Console.WriteLine("6 - exit");
                         while (!Byte.TryParse(Console.ReadLine(), out ch))
