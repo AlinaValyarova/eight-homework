@@ -16,6 +16,7 @@ namespace Homework_8._2
             public DateTime dedline;
             public string status;
             public string client;
+
             class Client
             {
                 public string name;
@@ -61,7 +62,7 @@ namespace Homework_8._2
                     byte ch;
                     do
                     {
-                        
+                        Console.Clear();
                         Console.WriteLine("Please, enter what you need to do");
                         Console.WriteLine("1 - Add a new project");
                         Console.WriteLine("2 - Add a new task");

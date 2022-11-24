@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Tumakov1
 {
-    class Transactions
+    public class Transactions
     {
         readonly DateTime data = DateTime.Now;
         readonly decimal summ;
